@@ -7,18 +7,5 @@
 
 % Your implementation please...
 
-% Define the grid
-row(1..4).
-col(1..4).
-num(1..4).
-
-% Generate a solution
-1 { sudoku(X,Y,N) : num(N) } 1 :- row(X), col(Y).
-
-% Each number appears once in each row
-:- row(X), num(N), #count{ Y : sudoku(X,Y,N) } != 1.
-
-% Each number appears once in each column
-:- col(Y), num(N), #count{ X : sudoku(X,Y,N) } != 1.
 
 #show sudoku/3.
