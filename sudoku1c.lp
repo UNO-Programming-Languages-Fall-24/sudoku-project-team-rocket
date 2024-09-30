@@ -25,7 +25,7 @@ sudoku(X,Y,N) :- initial(X,Y,N).
 :- column(Y), number(N), #count{ X : sudoku(X,Y,N) } != 1.
 
 % Each number appears exactly once in each subgrid
-:- subgrid(X,Y,G), number(N), #count{ X,Y : sudoku(X,Y,N), subgrid(X,Y,G) } != 1.
+:- subgrid(X,Y,G), number(N), #count{ X',Y' : sudoku(X',Y',N), subgrid(X',Y',G) } != 1.
 
 % Ensure all cells are filled
 :- row(X), column(Y), not sudoku(X,Y,_).
